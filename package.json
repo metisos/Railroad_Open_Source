@@ -1,0 +1,73 @@
+{
+  "name": "railroad-memory",
+  "version": "0.2.0",
+  "description": "Dynamic context memory for long-running AI agent tasks. Maintain coherent context past the 280k token limit. Works in Node.js and browsers.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.mjs",
+      "require": "./dist/browser.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/browser.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts src/browser.ts --format cjs,esm --dts --watch",
+    "test": "vitest",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "memory",
+    "context",
+    "llm",
+    "claude",
+    "gpt",
+    "persistent",
+    "long-running",
+    "yaml",
+    "browser",
+    "react",
+    "vue",
+    "frontend",
+    "localStorage",
+    "indexedDB"
+  ],
+  "author": "Metis Analytics",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metis-analytics/railroad-memory"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "dotenv": "^17.2.3",
+    "groq-sdk": "^0.37.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "yaml": "^2.3.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "browser": {
+    "./dist/index.js": "./dist/browser.js",
+    "./dist/index.mjs": "./dist/browser.mjs"
+  },
+  "sideEffects": false
+}
