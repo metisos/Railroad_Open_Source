@@ -1,0 +1,35 @@
+{
+  "overall_accuracy": 0.22114137483787288,
+  "total_correct": 341,
+  "total_questions": 1542,
+  "accuracy_by_category": {
+    "single-hop": {
+      "accuracy": 0.2553191489361702,
+      "correct": 72,
+      "total": 282
+    },
+    "temporal": {
+      "accuracy": 0.22741433021806853,
+      "correct": 73,
+      "total": 321
+    },
+    "multi-hop": {
+      "accuracy": 0.20833333333333334,
+      "correct": 20,
+      "total": 96
+    },
+    "open-domain": {
+      "accuracy": 0.20689655172413793,
+      "correct": 174,
+      "total": 841
+    },
+    "cat-5": {
+      "accuracy": 1.0,
+      "correct": 2,
+      "total": 2
+    }
+  },
+  "total_tokens": 3229384,
+  "model": "llama-3.3-70b-versatile",
+  "elapsed_minutes": 13.0872700492541
+}

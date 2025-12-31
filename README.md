@@ -702,6 +702,22 @@ Railroad was evaluated on [LongMemEval](https://github.com/xiaowu0162/LongMemEva
 
 See [`benchmarks/longmemeval/`](./benchmarks/longmemeval/) for raw results, evaluation scripts, and reproduction instructions.
 
+### LoCoMo (Letta Leaderboard)
+
+Railroad was also evaluated on [LoCoMo](https://github.com/letta-ai/letta-leaderboard), a challenging multi-session conversation benchmark with 1542 questions across 10 conversations (up to 30 sessions each).
+
+| Category | Accuracy |
+|----------|----------|
+| **Overall** | **22.1%** |
+| Single-hop | 25.5% |
+| Temporal | 22.7% |
+| Multi-hop | 20.8% |
+| Open-domain | 20.7% |
+
+**Note:** LoCoMo is significantly harder than LongMemEval - it tests memory across 10-30 sessions vs 2-3 sessions. The accuracy drop reflects the challenge of maintaining memory at scale.
+
+See [`benchmarks/locomo/`](./benchmarks/locomo/) for raw results and reproduction instructions.
+
 ## License
 
 MIT
