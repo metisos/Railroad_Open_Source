@@ -675,6 +675,33 @@ const session = await createSession('session-id', {
 
 **Total: 2.96 million tokens with perfect memory recall.**
 
+## Benchmarks
+
+### LongMemEval (ICLR 2025)
+
+Railroad was evaluated on [LongMemEval](https://github.com/xiaowu0162/LongMemEval), a comprehensive benchmark for testing long-term memory in chat assistants with 500 questions across 5 memory ability categories.
+
+| Metric | Railroad | GPT-4o (Full Context) | SOTA (Emergence AI) |
+|--------|----------|----------------------|---------------------|
+| **Overall Accuracy** | **61.2%** | 58-60% | 82-86% |
+| Tokens per Question | 3,825 | ~15,000+ | - |
+
+#### Accuracy by Category
+
+| Category | Accuracy | Notes |
+|----------|----------|-------|
+| Abstention | **90.0%** | Knows what it doesn't know |
+| Knowledge Update | **70.8%** | Tracks evolving information |
+| Preference | 66.7% | Recalls user preferences |
+| Temporal Reasoning | 65.4% | Time-based questions |
+| Multi-Session | 62.8% | Cross-session memory |
+| Single-Session User | 62.5% | User fact extraction |
+| Single-Session Assistant | 16.1% | Room for improvement |
+
+**Key Finding:** Railroad achieves GPT-4o-level accuracy with ~75% fewer tokens and no RAG infrastructure.
+
+See [`benchmarks/longmemeval/`](./benchmarks/longmemeval/) for raw results, evaluation scripts, and reproduction instructions.
+
 ## License
 
 MIT
