@@ -1,0 +1,113 @@
+{
+  "overall_accuracy": 0.8575,
+  "total_correct": 343,
+  "total_questions": 400,
+  "rlm_baseline": 0.58,
+  "delta_vs_rlm": 0.2775000000000001,
+  "accuracy_by_query": {
+    "pairs_01": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_02": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_03": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_04": {
+      "accuracy": 0.85,
+      "correct": 17,
+      "total": 20
+    },
+    "pairs_05": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_06": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_07": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_08": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_09": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_10": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_11": {
+      "accuracy": 0.45,
+      "correct": 9,
+      "total": 20
+    },
+    "pairs_12": {
+      "accuracy": 0.9,
+      "correct": 18,
+      "total": 20
+    },
+    "pairs_13": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_14": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_15": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_16": {
+      "accuracy": 0.85,
+      "correct": 17,
+      "total": 20
+    },
+    "pairs_17": {
+      "accuracy": 0.15,
+      "correct": 3,
+      "total": 20
+    },
+    "pairs_18": {
+      "accuracy": 1.0,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_19": {
+      "accuracy": 0.95,
+      "correct": 19,
+      "total": 20
+    },
+    "pairs_20": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 20
+    }
+  },
+  "total_tokens": 479554,
+  "model": "llama-3.3-70b-versatile",
+  "elapsed_minutes": 6.167303009827932,
+  "timestamp": "2026-01-20T04:39:50.993084"
+}

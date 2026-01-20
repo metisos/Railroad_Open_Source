@@ -1,27 +1,21 @@
-# Dependencies
-node_modules/
-
-# Build output (uncomment if you want users to build themselves)
-# dist/
-
-# Test artifacts
-test-sessions/
-benchmark-sessions/
-benchmark-results/
-comparison-sessions/
-comparison-results/
-*.output
-
-# Internal benchmark/test scripts
-benchmark-test.js
-comparison-benchmark.js
-engineer-comparison-benchmark.js
-test-with-groq.js
-
-# Environment
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
 .env
 .env.local
-.env*.local
+*.egg-info/
+dist/
+build/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
 
 # IDE
 .idea/
@@ -30,17 +24,37 @@ test-with-groq.js
 *.swo
 .DS_Store
 
-# Logs
-*.log
-npm-debug.log*
+# Compiled output
+*.o
+*.a
 
-# Coverage
-coverage/
-.nyc_output/
+# Test/Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
 
-# TypeScript cache
-*.tsbuildinfo
+# Secrets (never commit)
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Large data files (keep in separate storage)
+*.tar.gz
+*.zip
 
 # OS files
 Thumbs.db
-.npmrc
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Logs
+*.log
+logs/
+LongMemEval/
+letta-leaderboard/
