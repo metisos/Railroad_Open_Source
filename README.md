@@ -677,6 +677,21 @@ const session = await createSession('session-id', {
 
 ## Benchmarks
 
+### OOLONG-Pairs (State of the Art)
+
+Railroad was evaluated on [OOLONG-Pairs](https://arxiv.org/abs/2511.02817) (Bertsch et al., 2025), a quadratic-complexity benchmark that tests pair-finding across ~32K token contexts. Even GPT-5 scores <1% without scaffolding.
+
+| System | Model | Accuracy |
+|--------|-------|----------|
+| **MetisOS Digital Operator** | **Gemini 3.1 Pro + Railroad** | **93.75%** |
+| Railroad (direct prompting) | Llama 3.3 70B (Groq) | 85.75% |
+| RLM (Recursive Language Models) | GPT-5 | 58.00% |
+| Base Model | GPT-5 | 0.04% |
+
+**Key Finding:** A [MetisOS Digital Operator](https://metisos.co) running Railroad Memory as a general-purpose agent (not benchmark-optimized) achieves 93.75% -- beating GPT-5 with RLM by +35.75 percentage points at ~30x lower cost.
+
+See [`benchmarks/oolong_pairs/METIS_DIGITAL_OPERATOR_REPORT.md`](./benchmarks/oolong_pairs/METIS_DIGITAL_OPERATOR_REPORT.md) for full results, methodology, and reproduction instructions.
+
 ### LongMemEval (ICLR 2025)
 
 Railroad was evaluated on [LongMemEval](https://github.com/xiaowu0162/LongMemEval), a comprehensive benchmark for testing long-term memory in chat assistants with 500 questions across 5 memory ability categories.
