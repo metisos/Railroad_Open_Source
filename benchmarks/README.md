@@ -8,7 +8,9 @@ Comprehensive evaluation of the Railroad memory framework against state-of-the-a
 |-----------|-----------|----------|-----------------|-------|
 | **OOLONG-Pairs** | Quadratic pairs (32K) | **93.75%** | RLM (58%) | **+35.75%** |
 | LongMemEval | Multi-category QA | 61.2% | Zep (71.2%) | -10.0% |
-| LoCoMo | Multi-session memory | 22.1% | Letta (74%) | -51.9% |
+| LoCoMo | Multi-session memory | **45.0%** | Letta (74%) | -29.0% |
+
+*Note: Railroad's LoCoMo score uses Llama 3.3 70B (open-source). All competitors use GPT-4o/GPT-4o-mini.*
 
 ## Benchmark Descriptions
 
@@ -48,10 +50,13 @@ See: [`longmemeval/`](longmemeval/)
 - Multi-hop inference
 - Open-domain knowledge
 
-- **Our Result:** 22.1% (Llama 3.3 70B)
-- **Best Known:** 74.0% (Letta)
+- **Latest Result:** 45.0% (Sovereign Memory System, Llama 3.3 70B) -- **April 2026**
+- **Previous Result:** 22.1% (Llama 3.3 70B, naive extraction) -- December 2025
+- **Best Known:** 74.0% (Letta, GPT-4o-mini)
+- **Improvement:** +22.9 percentage points via Sovereign Memory architecture
+- **Note:** Only open-source model on the LoCoMo leaderboard
 
-See: [`locomo/`](locomo/)
+See: [`locomo/LOCOMO_SOVEREIGN_MEMORY_REPORT.md`](locomo/LOCOMO_SOVEREIGN_MEMORY_REPORT.md) | [`locomo/`](locomo/)
 
 ## Model Rankings
 
@@ -147,4 +152,4 @@ python benchmarks/locomo/railroad_benchmark.py \
 
 ---
 
-*Last updated: March 11, 2026*
+*Last updated: April 7, 2026*
