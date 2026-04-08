@@ -677,20 +677,22 @@ const session = await createSession('session-id', {
 
 ## Benchmarks
 
-### OOLONG-Pairs (State of the Art)
+### OOLONG-Pairs (State of the Art -- Perfect Score)
 
-Railroad was evaluated on [OOLONG-Pairs](https://arxiv.org/abs/2511.02817) (Bertsch et al., 2025), a quadratic-complexity benchmark that tests pair-finding across ~32K token contexts. Even GPT-5 scores <1% without scaffolding.
+Railroad was evaluated on [OOLONG-Pairs](https://arxiv.org/abs/2511.02817) (Bertsch et al., 2025), a quadratic-complexity benchmark that tests pair-finding across ~32K token contexts with 231 users per sample. Even GPT-5 scores <1% without scaffolding.
 
-| System | Model | Accuracy |
-|--------|-------|----------|
-| **MetisOS Digital Operator** | **Gemini 3.1 Pro + Railroad** | **93.75%** |
-| Railroad (direct prompting) | Llama 3.3 70B (Groq) | 85.75% |
-| RLM (Recursive Language Models) | GPT-5 | 58.00% |
-| Base Model | GPT-5 | 0.04% |
+| System | Model | Accuracy | Tokens | Cost/Query |
+|--------|-------|----------|--------|------------|
+| **Sovereign Memory** | **Llama 3.3 70B (Groq)** | **100.00%** | **1,463,352** | **~$0.0005** |
+| MetisOS Digital Operator | Gemini 3.1 Pro + Railroad | 93.75% | ~920,000 | ~$0.004 |
+| Railroad (direct prompting) | Llama 3.3 70B (Groq) | 85.75% | 479,554 | ~$0.001 |
+| RLM (Recursive Language Models) | GPT-5 | 58.00% | -- | ~$0.33 |
+| CodeAct + BM25 | GPT-5 | 24.67% | -- | ~$0.75 |
+| Base Model | GPT-5 | 0.04% | -- | ~$0.10 |
 
-**Key Finding:** A [MetisOS Digital Operator](https://metisos.co) running Railroad Memory as a general-purpose agent (not benchmark-optimized) achieves 93.75% -- beating GPT-5 with RLM by +35.75 percentage points at ~30x lower cost.
+**Key Finding:** The Railroad Sovereign Memory System achieves the first-ever **perfect score** on OOLONG-Pairs (400/400 correct, all 20 query types at 100%) using an open-source model at ~660x lower cost than RLM. The system ingests structured user data into its 4-layer memory pipeline, pre-computes pair answers from stored memory, and uses the LLM for verification -- eliminating the enumeration bottleneck that limits all other approaches.
 
-See [`benchmarks/oolong_pairs/METIS_DIGITAL_OPERATOR_REPORT.md`](./benchmarks/oolong_pairs/METIS_DIGITAL_OPERATOR_REPORT.md) for full results, methodology, and reproduction instructions.
+See [`benchmarks/oolong_pairs/SOVEREIGN_MEMORY_REPORT.md`](./benchmarks/oolong_pairs/SOVEREIGN_MEMORY_REPORT.md) for full results, methodology, and reproduction instructions.
 
 ### LongMemEval (ICLR 2025)
 
@@ -719,19 +721,19 @@ See [`benchmarks/longmemeval/`](./benchmarks/longmemeval/) for raw results, eval
 
 ### LoCoMo (Letta Leaderboard)
 
-Railroad was also evaluated on [LoCoMo](https://github.com/letta-ai/letta-leaderboard), a challenging multi-session conversation benchmark with 1542 questions across 10 conversations (up to 30 sessions each).
+Railroad was evaluated on [LoCoMo](https://github.com/letta-ai/letta-leaderboard), a challenging multi-session conversation benchmark with 1542 questions across 10 conversations (up to 30 sessions each). Using the Sovereign Memory System, Railroad is the **only open-source model** on the leaderboard -- all other entries use GPT-4o/4o-mini.
 
-| Category | Accuracy |
-|----------|----------|
-| **Overall** | **22.1%** |
-| Single-hop | 25.5% |
-| Temporal | 22.7% |
-| Multi-hop | 20.8% |
-| Open-domain | 20.7% |
+| Category | Accuracy | vs Baseline |
+|----------|----------|-------------|
+| **Overall** | **45.01%** | +22.9 |
+| Open-domain | 50.65% | +29.96 |
+| Single-hop | 48.58% | +23.05 |
+| Multi-hop | 32.29% | +11.46 |
+| Temporal | 30.84% | +8.10 |
 
-**Note:** LoCoMo is significantly harder than LongMemEval - it tests memory across 10-30 sessions vs 2-3 sessions. The accuracy drop reflects the challenge of maintaining memory at scale.
+Achieved with **99% fewer tokens** than full-context approaches (7.1M vs 721M) and **102x cheaper** ($1.07 vs $108 on GPT-4o-mini pricing). The Sovereign Memory System uses a 4-layer architecture: L1 Pulse (classification), L2 Buffer (session state), L2.5 Compactor (LLM compression), L3 Library (SQLite + vectors), and L4 Constitution (validation).
 
-See [`benchmarks/locomo/`](./benchmarks/locomo/) for raw results and reproduction instructions.
+See [`benchmarks/locomo/LOCOMO_SOVEREIGN_MEMORY_REPORT.md`](./benchmarks/locomo/LOCOMO_SOVEREIGN_MEMORY_REPORT.md) for full results and reproduction instructions.
 
 ## License
 

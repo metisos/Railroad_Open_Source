@@ -1,0 +1,117 @@
+{
+  "overall_accuracy": 1,
+  "total_correct": 400,
+  "total_questions": 400,
+  "rlm_baseline": 0.58,
+  "previous_railroad": 0.8575,
+  "metis_sota": 0.9375,
+  "delta_vs_rlm": 0.42000000000000004,
+  "accuracy_by_query": {
+    "pairs_01": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_02": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_03": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_04": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_05": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_06": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_07": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_08": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_09": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_10": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_11": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_12": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_13": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_14": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_15": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_16": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_17": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_18": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_19": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    },
+    "pairs_20": {
+      "accuracy": 1,
+      "correct": 20,
+      "total": 20
+    }
+  },
+  "total_tokens": 1463352,
+  "model": "llama-3.3-70b-versatile",
+  "memory_system": "sovereign-memory",
+  "railroad_mode": true,
+  "elapsed_minutes": 10.9,
+  "timestamp": "2026-04-08T00:36:34.529Z"
+}
